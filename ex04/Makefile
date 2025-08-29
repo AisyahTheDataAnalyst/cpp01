@@ -21,7 +21,7 @@ CFLAG = -Wall -Werror -Wextra -std=c++98 -g -O0 -fsanitize=address
 # -g = gives error messages for debugging, needed by gdb / valgrind / helgrind
 
 SRC =	\
-		main.cpp
+		main.cpp 
 
 OBJ_FOLDER = obj_files
 
