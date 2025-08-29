@@ -2,7 +2,7 @@
 
 Zombie *zombieHorde( int N, std::string name )
 {
-    Zombie *army_of_zombies = new Zombie[N];  // use default constructor instead of parameterized constructor because it has to make N zombies WITHOUT ARGUMENTS 
+    Zombie *army_of_zombies = new Zombie[N];  // use default constructor instead of parameterized constructorbecause it has to make N zombies WITHOUT ARGUMENTS 
     for (int i = 0; i < N; i++)
     {
         army_of_zombies[i].setName(name);
