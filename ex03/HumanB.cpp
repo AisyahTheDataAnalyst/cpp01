@@ -16,7 +16,7 @@ void HumanB::attack( void )
     {
         std::cout   << this->name 
                     << " attacks with their " 
-                    << weapon->getType() 
+                    << this->weapon->getType() // same as (*this->weapon).getType()
                     << std::endl;
     }
     else

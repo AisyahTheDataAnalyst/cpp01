@@ -12,7 +12,7 @@ void Weapon::setType( const std::string &new_type )
 }
 
 // getters
-const std::string Weapon::getType( void ) const
+std::string Weapon::getType( void ) const
 {
     return ( this->type );
 }

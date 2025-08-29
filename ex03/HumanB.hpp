@@ -12,8 +12,8 @@ class HumanB
         std::string name;
     
     public:
-        HumanB( std::string name );
-        void    setWeapon( Weapon &weapon );
+        HumanB( std::string _name );
+        void    setWeapon( Weapon &_weapon );
         void    attack( void );
 };
 

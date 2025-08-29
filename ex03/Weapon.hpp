@@ -12,7 +12,21 @@ class Weapon
     public:
         Weapon( std::string type );
         void setType( const std::string &new_type );
-        const std::string getType( void ) const;
+        std::string getType( void ) const;
 };
+
+// [ const std::string getType( void ) const; ]
+// const (before function) - means "Im returning a const string"
+// ❌ REDUNDANT coz youre returning by value- the copy only
+// caller can modify the copy withpout affecting the original anyway
+// const obj can only call const function member
+// non-const obj can call both const and non-const function member
+//
+// const (after function) - means "Im not modifying the object"
+// ✅ very useful and good for safety assurance
+//
+// rule of thumb:
+// if a method changes the data like setters - dont put const
+// if a method only reads data like getters or printing only - add const
 
 #endif
