@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/01 09:12:49 by aimokhta          #+#    #+#             */
+/*   Updated: 2025/09/01 09:12:51 by aimokhta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream> // std::cout
 #include <fstream> // std::ifstream, std::ofstream
 #include <string> // std::string, .length(), .substr(), .find(), .rdbuf()
