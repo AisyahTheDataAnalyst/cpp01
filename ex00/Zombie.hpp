@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:23:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/08/27 13:22:01 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 09:16:57 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
     private:
-        std::string name;
+        std::string _name;
         Zombie( void ); // private constructor - as a guard
         
     public:
