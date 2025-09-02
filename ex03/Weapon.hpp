@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:12:41 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:12:43 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 12:19:46 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon
 {
     private:
-        std::string type;
+        std::string _type;
     
     public:
         Weapon( std::string type );
@@ -30,11 +30,12 @@ class Weapon
 // const (before function) - means "Im returning a const string"
 // ❌ REDUNDANT coz youre returning by value- the copy only
 // caller can modify the copy withpout affecting the original anyway
-// const obj can only call const function member
-// non-const obj can call both const and non-const function member
 //
 // const (after function) - means "Im not modifying the object"
 // ✅ very useful and good for safety assurance
+//
+// const obj can only call const function member
+// non-const obj can call both const and non-const function member
 //
 // rule of thumb:
 // if a method changes the data like setters - dont put const

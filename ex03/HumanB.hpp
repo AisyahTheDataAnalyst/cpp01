@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:12:26 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:12:28 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 13:06:39 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@
 # include <string>
 # include <iostream>
 
+// Usually in C++, we prefer references when we want “must always exist” semantics
+// and pointers when “may be missing” is allowed.
+
 class HumanB
 {
     private:
-        Weapon *weapon; // pointer, can be NULL coz HumanB MAY NOT ALWAYS HAVE A WEAPON
-        std::string name;
+        Weapon *_weapon; // pointer, can be NULL coz HumanB MAY NOT ALWAYS HAVE A WEAPON
+        std::string _name;
     
     public:
-        HumanB( std::string _name );
-        void    setWeapon( Weapon &_weapon );
+        HumanB( std::string name );
+        void    setWeapon( Weapon &new_weapon );
         void    attack( void );
 };
 
