@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:11:57 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:11:59 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:28:42 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,17 @@ int main()
     std::string &stringREF = str;
 
     std::cout   << "The memory address of" << "\n" 
-                << "string variable: " << str << "\n" 
+                << "string variable: " << &str << "\n" 
                 << "stringPTR: " << stringPTR << "\n"
-                << "stringREF: " << stringREF << "\n" << "\n";
+                << "stringREF: " << &stringREF << "\n" << "\n";
+    // both original str and reference has to add & to show memory address
+    // without it, will only show the real value of them
 
     std::cout   << "The value of the string variable: " << str << "\n"
-                << "The value pointed to by stringPTR(needs to add * in front): " << *stringPTR << "\n"
+                << "The value pointed to by stringPTR: " << *stringPTR << "\n"
                 << "The value pointed to by stringREF: " << stringREF << std::endl;
+    // to show value of pointer, need to add * in front 
+
 
 
     // just for my own learning
