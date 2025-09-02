@@ -6,11 +6,14 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:11:40 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/02 10:00:17 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:15:56 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+// this Zombie.cpp is only for function members of the class only
+// normal functions has their own individual file
 
 Zombie::Zombie( void )
 {
