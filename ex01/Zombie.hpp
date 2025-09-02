@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:11:45 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:11:46 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/02 09:43:38 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
     private:
-        std::string name;
+        std::string _name;
     
     public:
         void    announce( void );
@@ -28,6 +28,6 @@ class Zombie
         ~Zombie( void );
 };
 
-Zombie *zombieHorde( int N, std::string name );
+Zombie *zombieHorde( int N, std::string name ); // factory function
 
 #endif
