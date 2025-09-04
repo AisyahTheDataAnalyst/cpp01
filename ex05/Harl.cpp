@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:12:57 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:12:58 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:38:57 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void Harl::complain ( std::string level )
 
     // 3. array of fn pointers
     // matching the levels
-    // each element points to one of Harl's meber functions
+    // each element points to one of Harl's member functions
     // 2nd pointer - store actual function addresses in an array
     HarlFn actions[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 

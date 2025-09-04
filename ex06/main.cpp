@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:13:24 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:13:25 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:50:13 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,9 @@ int main(int ac, char **av)
         std::cerr << "Usage: ./program <level>\n";
         return 1;
     }
-
-    std::string argument = av[1];
-    Levels level = getLevelFromString(argument);
-
-    switch(level)
-    {
-        case DEBUG:
-            Harl::debug();
-            break;
-        case INFO:
-            Harl::info();
-            break;
-        case WARNING:
-            Harl::warning();
-            break;
-        case ERROR:
-            Harl::error();
-            break;
-        case DEFAULT:
-            std::cout << "[ Probably complaining about insignificant problems ]\n" << std::endl;
-            break;
-    }
-
+    
+    Levels level = getLevelFromString(av[1]);
+    Harl::complain(level);
     return 0;
 }
+

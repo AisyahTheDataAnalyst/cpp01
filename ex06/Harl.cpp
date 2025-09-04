@@ -6,13 +6,13 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:13:16 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:13:17 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:49:30 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
-Levels getLevelFromString( std::string str )
+ 
+Levels getLevelFromString( std::string str ) 
 {
     if (str == "DEBUG")
         return DEBUG;
@@ -24,6 +24,28 @@ Levels getLevelFromString( std::string str )
         return ERROR;
     else
         return DEFAULT;
+}
+
+void Harl::complain ( Levels level )
+{
+    switch(level)
+    {
+        case DEBUG:
+            Harl::debug();
+            break;
+        case INFO:
+            Harl::info();
+            break;
+        case WARNING:
+            Harl::warning();
+            break;
+        case ERROR:
+            Harl::error();
+            break;
+        case DEFAULT:
+            std::cout << "[ Probably complaining about insignificant problems ]\n" << std::endl;
+            break;
+    }
 }
 
 void Harl::debug( void )

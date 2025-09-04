@@ -6,16 +6,16 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:12:49 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/01 09:12:51 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/04 10:33:15 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> // std::cout
+#include <iostream> // std::cout, std::cerr
 #include <fstream> // std::ifstream, std::ofstream
-#include <string> // std::string, .length(), .substr(), .find(), .rdbuf()
+#include <string> // std::string class & its member functions { .length(), .substr(), .find(), .rdbuf() }
 #include <sstream> // std::ostringstream, .str()
 
-int main(int ac, char **av)
+int main(int ac, char **av) // C++ inherited C's runtime startup convention. )S still passes args as an array of C-strings. we cant accept std::string av coz OS does not pass args in that form
 {
     if (ac != 4)
     {
@@ -23,7 +23,7 @@ int main(int ac, char **av)
         return 1;
     }
    
-    std::string filename = av[1];
+    std::string filename = av[1]; // convert char * to std::string - std::string has a constructor that takes const char *
     std::string s1 = av[2];
     std::string s2 = av[3];
 
@@ -33,19 +33,19 @@ int main(int ac, char **av)
         return 1;
     }
 
-    std::ifstream input(filename.c_str());        // open to read, .c_str() converts std::string to const char* since C++98 streams don’t accept std::string directly
-    if (!input)
+    std::ifstream input(filename.c_str());        // std::ifstream = opena a file to read in text mode by default, .c_str() converts std::string to const char* since C++98 file-streams constructor don’t accept std::string directly - they want const char*. input = object of type std::ifstream
+    if (!input)                                   // c++ stream objects (ifstream, ofstream, fstream) have a boolean conversion operator - true/false - !input means false - same result id use input.is_open() - returns true/false
     {
         std::cerr << "Error open file to read\n";
         return 1;
     }
 
     std::ostringstream buffer;                    // ostringstream = strictly for output and only write into it, stringstream = for both input/output
-    buffer << input.rdbuf();                      // read whole file - it accumulates the data in memory
+    buffer << input.rdbuf();                      // read whole file - it accumulates the data in memory // .rdbuf vs getnextline
     std::string content = buffer.str();           // .str() fn returns all the accumulated characters as a std::string
     
-    size_t pos = 0;                                            // start searching from beginning
-    while ((pos = content.find(s1, pos)) != std::string::npos) // pos is the position (index) where the first s1 appears in content. if not found, it returns std::string::npos a special const used with .find()
+    size_t pos = 0;                                            // pos is the position (index), start searching from beginning 
+    while ((pos = content.find(s1, pos)) != std::string::npos) // content.find(s1,pos) = searches for the next occurrence of s1, starting from pos. if not found, it returns std::string::npos if not found (that’s basically the special value size_t(-1)).
     {
         content = content.substr(0, pos)                       // everything before s1, substr(start, length)
                     + s2                                       // the replacement string
@@ -53,7 +53,7 @@ int main(int ac, char **av)
         pos += s2.length();                                    // skip replaced part
     }
     
-    std::ofstream output((filename + ".replace").c_str());  // open to write , .c_str() converts std::string to const char* since C++98 streams don’t accept std::string directly
+    std::ofstream output((filename + ".replace").c_str());  // std::ofstream = open to write , .c_str() converts std::string to const char* since C++98 streams don’t accept std::string directly
     if (!output)
     {
         std::cerr << "Error: cannot open file to write\n";
@@ -61,7 +61,7 @@ int main(int ac, char **av)
     }
     output << content;
 
-    // closing
+    // closing - Streams would auto-close on destruction at end of scope, but explicit close() is fine.
     input.close();
     output.close();
 
